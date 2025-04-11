@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+{% block content %}
+
+            <!-- Header-->
+            <header class="py-5">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-5">
+                            <!-- Header text content-->
+                            <div class="text-center text-xxl-start">
+                                <style>
+        /* Optional: Add some custom styles if needed */
+        .table-container {
+            margin-bottom: 30px; /* Space between tables */
+        }
+    </style>
+    <table class="table"> 
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 table-container">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <h1>Add new Project<hr></h1>
+    <a href="/edit/0"><button style="background-color: skyblue;">Add new Project</button></a><hr></hr>
+    <h2>Edit Projects</h2>
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Project Link</th>
+      <th scope="col">Project Date</th>
+      <th scope="col">Img File</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in projects %}
+    <tr>
+      <th scope="row">{{project.sno}}</th>
+      <td>{{project.title}}</td>
+      <td>{{project.content}}</td>
+      <td>{{project.pro_link}}</td>
+      <td>{{project.date}}</td>
+      <td>{{project.img_file}}</td>
+      <th scope="col"><a href="/edit/{{project.sno}}"><button style="background-color: lightblue;">Edit</button></th></a>
+      <th scope="col"><a href="/deletepr/{{project.sno}}"><button style="background-color: lightblue;">Delete</button></th></a>
+    </tr>
+{% endfor %}
+
+    <hr></hr>
+<table class="table">
+    <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 table-container">
+                    <table class="table table-bordered">
+                        <h3>Add new Experience<hr></h3>
+<a href="/editexp/0"><button style="background-color: skyblue;">Add new Experience</button></a><hr></hr>
+  <thead class="thead-light">
+    <h2>Edit Experience</h2>
+    <tr>
+      <th scope="col">Join Date</th>
+      <th scope="col">Title</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">Content</th>
+      <th scope="col">Company Address</th>
+      <th scope="col">Resign Date</th>
+      <th scope="col">Post Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for expe in expes %}
+    <tr>
+      <th scope="row">{{expe.join_date}}</th>
+      <td>{{expe.title}}</td>
+      <td>{{expe.company_name}}</td>
+      <td>{{expe.content}}</td>
+      <td>{{expe.com_add}}</td>
+      <td>{{expe.res_date}}</td>
+      <td>{{expe.post_date}}</td>
+      <td scope="col"><a href="/editexp/{{expe.sno}}"><button style="background-color: lightblue;">Edit</button></td></a>
+      <td scope="col"><a href="/deleteex/{{expe.sno}}"><button style="background-color: lightblue;">Delete</button></td>
+    </tr>
+    {% endfor %}
+
+<hr></hr>
+<table class="table">
+    <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 table-container">
+                    <table class="table table-bordered">
+                        <h3>Add new Education Detail<hr></h3>
+<a href="/edc/0"><button style="background-color: skyblue;">Add new Education Detail</button></a><hr></hr>
+  <thead class="thead-light">
+    <h2>Edit Education Detail</h2>
+    <tr>
+      <th scope="col">Course Duration</th>
+      <th scope="col">College Name</th>
+      <th scope="col">College Address</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Course Work</th>
+      <th scope="col">Content</th>
+      <th scope="col">Post Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for edc in edcs %}
+    <tr>
+      <th scope="row">{{edc.cor_duration}}</th>
+      <td>{{edc.clg_name}}</td>
+      <td>{{edc.clg_add}}</td>
+      <td>{{edc.cor_name}}</td>
+      <td>{{edc.cor_work}}</td>
+      <td>{{edc.content}}</td>
+      <td>{{edc.post_date}}</td>
+      <td scope="col"><a href="/edc/{{edc.sno}}"><button style="background-color: lightblue;">Edit</button></td></a>
+      <td scope="col"><a href="/deleteed/{{edc.sno}}"><button style="background-color: lightblue;">Delete</button></td></a>
+    </tr>
+    {% endfor %}
+
+
+    <hr></hr>
+<table class="table">
+    <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 table-container">
+                    <table class="table table-bordered">
+  <thead class="thead-light">
+    <h2>Edit Experience</h2>
+    <tr>
+      <th scope="col">User Id</th>
+      <th scope="col">User Name</th>
+      <th scope="col">User Mail</th>
+      <th scope="col">Password</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in user %}
+    <tr>
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.uname}}</td>
+      <td>{{user.umail}}</td>
+      <td>{{user.password}}</td>
+      <td scope="col"><a href="/edituser/{{user.id}}"><button style="background-color: lightblue;">Edit</button></td></a>
+      <td scope="col"><a href="/deleteuser/{{user.id}}"><button style="background-color: lightblue;">Delete</button></td>
+    </tr>
+    {% endfor %}
+
+
+  </tbody>
+</table>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl ">
+
+                                <div class="d-flex justify-content-center fs-2 gap-4">
+                                    <a class="text-gradient" href="{{params['ig_url']}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                                    <a class="text-gradient" href="{{params['ld_url']}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    <!--<a class="text-gradient" href="{{url_for('static', filename='index.html')}}"><i class="bi bi-github"></i></a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <a href="/logout"><button style="background-color: skyblue; margin-left: 600px; margin-right: auto;">Logout</button></a>
+{% endblock %}

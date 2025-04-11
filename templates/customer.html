@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+
+            <!-- Header-->
+            <header class="py-5">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-5">
+                            <!-- Header text content-->
+                            <div class="text-center text-xxl-start">
+                                <style>
+        /* Optional: Add some custom styles if needed */
+        .table-container {
+            margin-bottom: 30px; /* Space between tables */
+        }
+    </style>
+<table class="table">
+    <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 table-container">
+                    <table class="table table-bordered">
+                        <h3>Visitors Details<hr></h3>
+    <tr>
+      <th scope="col">sno</th>
+      <th scope="col">Name</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+    <tr>
+      <th scope="row">{{contact.sno}}</th>
+      <td>{{contact.name}}</td>
+      <td>{{contact.msg}}</td>
+    </tr>
+    {% endfor %}
+
+
+  </tbody>
+</table>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl ">
+
+                                <div class="d-flex justify-content-center fs-2 gap-4">
+                                    <a class="text-gradient" href="{{params['ig_url']}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                                    <a class="text-gradient" href="{{params['ld_url']}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    <!--<a class="text-gradient" href="{{url_for('static', filename='index.html')}}"><i class="bi bi-github"></i></a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+{% endblock %}

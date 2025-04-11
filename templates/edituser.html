@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+
+            <!-- Header-->
+            <header class="py-5">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-5">
+                            <!-- Header text content-->
+                            <div class="text-center text-xxl-start">
+                                <style>
+        /* Optional: Add some custom styles if needed */
+        .table-container {
+            margin-bottom: 30px; /* Space between tables */
+        }
+    </style>
+  <hr>
+                                    <!-- cor_duration input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="id" type="text" name='id'  placeholder="title" value="{{user.id}}" data-sb-validations="required"/>
+                                        <label for="name">User Id</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">A User Id is required.</div>
+                                    </div>
+                                    <!-- clg_name input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="uname" type="text" name='uname' placeholder="message" value="{{user.uname}}" data-sb-validations="required" />
+                                        <label for="email">User Name</label>
+                                        <div class="invalid-feedback" data-sb-feedback="email:required">An User Name is required.</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Clg name is not valid.</div>
+                                    </div>
+                                    <!-- clg_add number input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="umail" type="text" name='umail'placeholder="umail" value="{{user.umail}}" data-sb-validations="required" />
+                                        <label for="phone">User Mail</label>
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A User Mail is required.</div>
+                                    </div>
+                                    <!-- cor_name number input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="password" type="text" name='password'placeholder="cor_name" value="{{user.password}}" data-sb-validations="required" />
+                                        <label for="phone">User Password</label>
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A User Password is required.</div>
+                                    </div>                                
+                                    <!-- Submit success message-->
+                                    <!---->
+                                    <!-- This is what your users will see when the form-->
+                                    <!-- has successfully submitted-->
+                                    <div class="d-none" id="submitSuccessMessage">
+                                        <div class="text-center mb-3">
+                                            <div class="fw-bolder">Form submission successful!</div>
+                                            To activate this form, sign up at
+                                            <br />
+                                            <a href="/">form submit successfully</a>
+                                        </div>
+                                    </div>
+                                    <!-- Submit error message-->
+                                    <!---->
+                                    <!-- This is what your users will see when there is-->
+                                    <!-- an error submitting the form-->
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- Submit Button-->
+                                    <div class="d-grid"><button class="btn btn-primary" id="submitButton" type="submit" value="submit">Submit</button></div>
+                                </form>
+
+
+
+                           </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl ">
+
+                                <div class="d-flex justify-content-center fs-2 gap-4">
+                                    <a class="text-gradient" href="{{params['ig_url']}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                                    <a class="text-gradient" href="{{params['ld_url']}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    <!--<a class="text-gradient" href="{{url_for('static', filename='index.html')}}"><i class="bi bi-github"></i></a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+{% endblock %}
